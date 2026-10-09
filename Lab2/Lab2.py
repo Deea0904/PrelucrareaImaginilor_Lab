@@ -2,6 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 img = cv2.imread('Image.jpg')
 hsvImage = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+cv2.imshow('Original', img)
 cv2.imshow('HSV image', hsvImage)
 cv2.waitKey()
 
