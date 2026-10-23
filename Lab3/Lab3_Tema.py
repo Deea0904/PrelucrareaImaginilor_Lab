@@ -50,7 +50,7 @@ if __name__ == "__main__":
     if img is None:
         raise FileNotFoundError(f"Nu pot citi imaginea: {image_path}")
 
-    # Binarizarea lucreaza pe tonuri de gri
+
     gri = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     T, binara = binarizare_automata_globala(gri, eroare=0.1)
