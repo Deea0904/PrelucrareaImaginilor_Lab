@@ -8,12 +8,12 @@ directory = r'./Imagini'
 
 img = cv2.imread(image_path)
 negative_img = 255 - img
-contrast_img = cv2.convertScaleAbs(img, alpha=2.0, beta=0)
-gamma=3
+contrast_img = cv2.convertScaleAbs(img, alpha=2.0, beta=1)
+gamma=1
 invGamma = 1.0 / gamma
 table = np.array([((i / 255.0) ** invGamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
 gamma_img = cv2.LUT(img, table)
-brightness_img = cv2.convertScaleAbs(img, alpha=1, beta=60)
+brightness_img = cv2.convertScaleAbs(img, alpha=1, beta=20)
 cv2.imshow("Imaginea originala", img)
 
 key = cv2.waitKey()
